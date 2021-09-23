@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FEFBF3">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#E05D5D">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="Đọc truyện online"
+                    android:fontFamily="monospace"
+                    android:textSize="18dp"
+                    android:textColor="#FEFBF3"/>
+            </androidx.appcompat.widget.Toolbar>
+            <ViewFlipper
+                android:id="@+id/viewflipper"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="#FEFBF3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edt">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_margin="5dp"
+                    android:textColor="#FDD2BF"
+                    android:textSize="25dp"
+                    android:text="Mới cập nhật"
+                    android:fontFamily="sans-serif-medium"/>
+                <ListView
+                    android:id="@+id/listviewDS"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationDs"
+            android:layout_gravity = "start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listviewThongTin"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+            <ListView
+                android:id="@+id/listviewMain"
+                android:layout_marginTop="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.navigation.NavigationView>
+        <!--Thêm: android:inputType="textPassword" -> EditText mat khau dang nhap-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</LinearLayout>
