@@ -59,7 +59,7 @@ public class adapterTruyen extends BaseAdapter {
         Truyen truyen = (Truyen)getItem(position);
         viewHolder.txtTenTryen.setText(truyen.getTenTruyen());
 
-        Picasso.get().load(truyen.getAnh()).placeholder(R.drawable.ic_baseline_cloud_download_24).error(R.drawable.ic_baseline_image_24);
+        Picasso.get().load(truyen.getAnh()).placeholder(R.drawable.ic_baseline_cloud_download_24).error(R.drawable.ic_baseline_image_24).into(viewHolder.imgTruyen);
 
         return convertView;
     }
