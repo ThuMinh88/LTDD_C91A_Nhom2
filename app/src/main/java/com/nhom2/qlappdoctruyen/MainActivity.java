@@ -28,7 +28,7 @@ import com.nhom2.qlappdoctruyen.model.Truyen;
 
 import java.util.ArrayList;
 
-          public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     Toolbar toolbar;
@@ -103,7 +103,7 @@ import java.util.ArrayList;
 
         TruyenArrayList = new ArrayList<>();
 
-        Cursor cursorl = databaseDocTruyen.getData();
+        Cursor cursorl = databaseDocTruyen.getDatal();
         while (cursorl.moveToNext()){
             int id = cursorl.getInt(0);
             String tenTruyen = cursorl.getString(1);
