@@ -1,0 +1,16 @@
+com/nhom2/qlappdoctruyen/model/TaiKhoan.java
+ com.nhom2.qlappdoctruyen.model.TaiKhoan
+com/nhom2/qlappdoctruyen/BuildConfig.java
+ com.nhom2.qlappdoctruyen.BuildConfig
+com/nhom2/qlappdoctruyen/MainActivity.java
+ com.nhom2.qlappdoctruyen.MainActivity
+com/nhom2/qlappdoctruyen/database/databasedoctruyen.java
+ com.nhom2.qlappdoctruyen.database.databasedoctruyen
+com/nhom2/qlappdoctruyen/MHDangNhap.java
+ com.nhom2.qlappdoctruyen.MHDangNhap
+ com.nhom2.qlappdoctruyen.MHDangNhap$1
+ com.nhom2.qlappdoctruyen.MHDangNhap$2
+com/nhom2/qlappdoctruyen/MHDangKy.java
+ com.nhom2.qlappdoctruyen.MHDangKy
+ com.nhom2.qlappdoctruyen.MHDangKy$1
+ com.nhom2.qlappdoctruyen.MHDangKy$2
