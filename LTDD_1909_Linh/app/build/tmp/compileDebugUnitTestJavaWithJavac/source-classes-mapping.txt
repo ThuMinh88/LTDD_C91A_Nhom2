@@ -1,0 +1,2 @@
+com/nhom2/qlappdoctruyen/ExampleUnitTest.java
+ com.nhom2.qlappdoctruyen.ExampleUnitTest
