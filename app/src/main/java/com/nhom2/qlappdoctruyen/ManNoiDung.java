@@ -21,8 +21,8 @@ public class ManNoiDung extends AppCompatActivity {
 
         //Lay du lieu
         Intent intent = getIntent();
-        String tentruyen = intent.getStringExtra("tenTruyen");
-        String noiDung = intent.getStringExtra("NoiDung");
+        String tentruyen = intent.getStringExtra("tentruyen");
+        String noiDung = intent.getStringExtra("noidung");
 
         txtTenTruyen.setText(tentruyen);
         txtNoiDung.setText(noiDung);

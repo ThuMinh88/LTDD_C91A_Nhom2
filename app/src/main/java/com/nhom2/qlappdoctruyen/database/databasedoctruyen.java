@@ -254,4 +254,10 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
         return res;
     }
 
+    //Lay tat ca truyen
+    public Cursor getData2(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+ TABLE_TRUYEN, null);
+        return  res;
+    }
 }

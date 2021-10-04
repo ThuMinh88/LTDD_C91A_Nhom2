@@ -13,7 +13,9 @@
         android:theme="@style/Theme.QLAppDocTruyen">
         <activity android:name=".MainDangBai"></activity>
         <activity android:name=".MainThongTin" />
+        <activity android:name=".ManTimKiem"/>
         <activity android:name=".MHDangKy" />
+        <activity android:name=".ManNoiDung"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".MHDangNhap">
             <intent-filter>

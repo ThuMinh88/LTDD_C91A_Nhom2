@@ -5,30 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/gray_star1"
     tools:context=".ManNoiDung">
     
     <TextView
         android:id="@+id/tenTruyen"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"
         android:fontFamily="@font/svn_helvetica_neue_heavy"
         android:text="TÊN TRUYỆN"
-        android:textColor="#7027A0"
+        android:textColor="#fed6e3"
         android:textSize="30dp"></TextView>
+
     <TextView
         android:id="@+id/noidung"
-        android:scrollbars="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="326dp"
+        android:layout_height="626dp"
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:fontFamily="@font/svn_helvetica_neue_regular"
-        android:textColor="#7027A0"
+        android:scrollbars="vertical"
         android:text="Noi dung"
+        android:textColor="#f5f7fa"
         android:textSize="18dp"></TextView>
-
-
-
-
 </LinearLayout>
