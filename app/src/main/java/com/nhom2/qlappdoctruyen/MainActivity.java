@@ -9,8 +9,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,13 +20,18 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
+import com.nhom2.qlappdoctruyen.adapter.adapterChuyenMuc;
+import com.nhom2.qlappdoctruyen.adapter.adapterThongTin;
 import com.nhom2.qlappdoctruyen.adapter.adapterTruyen;
 import com.nhom2.qlappdoctruyen.database.databasedoctruyen;
+import com.nhom2.qlappdoctruyen.model.TaiKhoan;
 import com.nhom2.qlappdoctruyen.model.Truyen;
+import com.nhom2.qlappdoctruyen.model.chuyenmuc;
 
 import java.util.ArrayList;
 
@@ -41,8 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Truyen> TruyenArrayList;
     adapterTruyen adapterTruyen;
+    ArrayList<chuyenmuc> chuyenmucArrayList;
+    ArrayList<TaiKhoan> taiKhoanArrayList;
 
     databasedoctruyen databaseDocTruyen;
+
+    adapterChuyenMuc adapterChuyenMuc;
+    adapterThongTin apdapterThongTin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +80,39 @@ public class MainActivity extends AppCompatActivity {
 
                 String tenT = TruyenArrayList.get(position).getTenTruyen();
                 String noiDung = TruyenArrayList.get(position).getNoiDung();
-                intent.putExtra("tentruyen", tenT);
-                intent.putExtra("noidung", noiDung);
+                intent.putExtra("tenTruyen", tenT);
+                intent.putExtra("NoiDung", noiDung);
                 startActivity(intent);
             }
         });
+
+        //bắt click item cho listview
+       listviewMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Đăng bài
+                if(position == 0){
+                    if ((i == 2)) {
+                        Intent intent = new Intent(MainActivity.this, MainDangBai.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this,"Bạn không có quyền đăng bài",Toast.LENGTH_LONG).show();
+                        Log.e("Đăng bài: ", "Bạn không có quyền đăng");
+                    }
+                }
+                // Nếu vị trí ấn vào là thông tin thì sẽ chuyển qua main thông tin app
+                else if (position == 1){
+                    Intent intent = new Intent(MainActivity.this, MainThongTin.class);
+                    startActivity(intent);
+                }
+                //Đăng xuất
+                else if(position == 2){
+                    finish();
+                }
+            }
+        });
+
     }
 
     //Lam viec voi toolbar
@@ -119,7 +159,21 @@ public class MainActivity extends AppCompatActivity {
         cursorl.moveToFirst();
         cursorl.close();
 
+        //THONG TIN
+        taiKhoanArrayList = new ArrayList<>();
+        taiKhoanArrayList.add(new TaiKhoan(tenTaiKhoan,email));
 
+        apdapterThongTin = new adapterThongTin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
+        listviewThongTin.setAdapter(apdapterThongTin);
+
+        //chuyenmuc
+        chuyenmucArrayList = new ArrayList<>();
+        chuyenmucArrayList.add(new chuyenmuc("Đăng bài",R.drawable.ic_baseline_post_add_24));
+        chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.drawable.ic_baseline_face_24));
+        chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.ic_baseline_login_24));
+
+        adapterChuyenMuc = new adapterChuyenMuc(this,R.layout.chuyenmuc, chuyenmucArrayList);
+        listviewMain.setAdapter(adapterChuyenMuc);
     }
     // Nap mot menu tim kiem
     @Override

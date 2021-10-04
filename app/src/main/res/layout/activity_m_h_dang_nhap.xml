@@ -7,15 +7,23 @@
     android:orientation="vertical"
     tools:context=".MHDangNhap">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="278dp"
+        android:maxWidth="20dp"
+        android:src="@mipmap/truyenicon"
+        android:background="@drawable/bd_gardient">
+    </ImageView>
+    <!--
     <TextView
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Đăng nhập"
         android:textColor="#3A9401"
         android:textSize="40dp"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold"></TextView>-->
 
     <EditText
         android:id="@+id/taikhoan"
@@ -39,12 +47,15 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bd_gardient"
         android:text="Đăng nhập"
         android:layout_gravity="center"></Button>
     <Button
         android:id="@+id/dangky"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#fbc2eb"
         android:text="Đăng ký"
         android:layout_gravity="center"></Button>
 
