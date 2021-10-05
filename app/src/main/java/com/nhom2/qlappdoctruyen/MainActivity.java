@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
                     if (i == 2) {
                         Intent intent = new Intent(MainActivity.this, ManAdmin.class);
+                        //gửi id tài khoản qua màn admin
+                        intent.putExtra("Id",idd);
                         startActivity(intent);
                     }
                     else {

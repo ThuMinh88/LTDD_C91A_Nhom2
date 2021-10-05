@@ -31,7 +31,6 @@ public class MainDangBai extends AppCompatActivity {
         btnDangBai = findViewById(R.id.dbdangbai);
 
         databasedoctruyen = new databasedoctruyen(this);
-        //button đăng bài
         btnDangBai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
