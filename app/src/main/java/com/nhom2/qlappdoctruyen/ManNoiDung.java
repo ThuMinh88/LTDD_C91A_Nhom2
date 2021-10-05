@@ -21,11 +21,11 @@ public class ManNoiDung extends AppCompatActivity {
 
         //Lay du lieu
         Intent intent = getIntent();
-        String tentruyen = intent.getStringExtra("tenTruyen");
-        String noidung = intent.getStringExtra("noidung");
+        String tentruyen = intent.getStringExtra("tentruyen");
+        String noiDung = intent.getStringExtra("noidung");
 
         txtTenTruyen.setText(tentruyen);
-        txtNoiDung.setText(noidung);
+        txtNoiDung.setText(noiDung);
 
         //Cho phep cuon noi dung truyen
         txtNoiDung.setMovementMethod(new ScrollingMovementMethod());

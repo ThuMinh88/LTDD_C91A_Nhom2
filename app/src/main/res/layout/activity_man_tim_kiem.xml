@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ManTimKiem">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:background="@drawable/bd_gardient">
+             <ImageView
+                 android:layout_width="match_parent"
+                 android:layout_height="100dp"
+                 android:src="@mipmap/truyenicon"/>
+            <EditText
+                android:id="@+id/timkiem"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/bg_sreach"
+                android:gravity="center"
+                android:hint="Tìm kiếm truyện..."
+                android:textColorHint="#852747" />
+       <!-- </ImageView>-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listViewTimKiem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

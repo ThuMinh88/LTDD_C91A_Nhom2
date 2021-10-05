@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.nhom2.qlappdoctruyen.database.databasedoctruyen;
 
@@ -68,6 +69,11 @@ public class MHDangNhap extends AppCompatActivity {
                         intent.putExtra("tentaikhoan", tentk);
 
                         startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(MHDangNhap.this,"Mời bạn nhập lại thông tin!!",Toast.LENGTH_LONG).show();
+                        edtMatKhau.setText("");
+                        edtTaiKhoan.setText("");
                     }
                 }
                 cursor.moveToFirst();

@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainDangBai">
+    android:orientation="vertical"
+    tools:context=".ManDangBai">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:textColor="#EF291A"
+        android:gravity="center"
+        android:text="Đăng Bài"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/dbTentruyen"
+        android:layout_gravity="center"
+        android:hint="Tên truyện"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/dbnoidung"
+        android:hint="Nội dung"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/dbimg"
+        android:hint="Ảnh"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+
+    <Button
+        android:inputType="text"
+        android:id="@+id/dbdangbai"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:text="Đăng Bài"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

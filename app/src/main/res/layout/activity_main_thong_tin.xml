@@ -27,13 +27,12 @@
         />
     <TextView
         android:id="@+id/txtThongTin"
-        android:padding="20dp"
+        android:padding="5dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:textColor="#fda085"
         android:fontFamily="@font/svn_helvetica_neue_regular"
-        android:textSize="18dp"/>
+        android:textSize="23dp"/>
 
 </LinearLayout>

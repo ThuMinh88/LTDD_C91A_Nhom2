@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nhom2.qlappdoctruyen.R;
-
 import com.nhom2.qlappdoctruyen.model.Truyen;
 import com.squareup.picasso.Picasso;
 

@@ -9,7 +9,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-
+import com.nhom2.qlappdoctruyen.model.TaiKhoan;
+import com.nhom2.qlappdoctruyen.model.Truyen;
 
 public class databasedoctruyen  extends SQLiteOpenHelper {
     //CSDL
@@ -247,18 +248,20 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
         Log.e("ADD TK", "TC");
     }
 
-    //lấy 3 truyện mới nhất
+    //lấy 5 truyện mới nhất
     public Cursor getDatal(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN+" DESC LIMIT 3", null);
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN+" DESC LIMIT 5", null);
         return res;
     }
 
+    //Lay tat ca truyen
     public Cursor getData2(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN, null);
-        return res;
+        Cursor res = db.rawQuery("SELECT * FROM "+ TABLE_TRUYEN, null);
+        return  res;
     }
+
     //add truyện
     public  void AddTruyen(Truyen truyen){
         SQLiteDatabase db= this.getWritableDatabase();
@@ -269,12 +272,10 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
         values.put(IMAGE, truyen.getAnh());
         values.put(ID_TAI_KHOAN, truyen.getID_TK());
 
-        db.insert(TABLE_TAIKHOAN, null,values);
+        db.insert(TABLE_TRUYEN, null,values);
         db.close();
     }
     //delete truyen
-
-
     public int Delete(int i) {
         SQLiteDatabase db = this.getReadableDatabase();
 
