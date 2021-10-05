@@ -2,6 +2,7 @@ package com.nhom2.qlappdoctruyen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -57,6 +58,28 @@ public class ManAdmin extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
+                DialogDelete(position);
+
+                return false;
+
+            }
+        });
+    }
+    private void  DialogDelete(int position){
+        Dialog dialog = new Dialog(this);
+        //nạp layout
+        dialog.setContentView(R.layout.dialogdelete);
+        //chỉ no mới đc đóng
+        dialog.setCanceledOnTouchOutside(false);
+
+        //ánh xạ
+        Button btnYes = dialog.findViewById(R.id.buttonYes);
+        Button btnNo = dialog.findViewById(R.id.buttonNo);
+
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 int idtruyen = TruyenArrayList.get(position).getID();
 
                 //xoá dữ liệu
@@ -67,9 +90,17 @@ public class ManAdmin extends AppCompatActivity {
                 finish();
                 startActivity(intent);
                 Toast.makeText(ManAdmin.this,"Xoá truyện thành công", Toast.LENGTH_SHORT).show();
-                return false;
+
             }
         });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        //run...
+        dialog.show();
     }
 //gán dữ liệu cho listview
     private void initList() {

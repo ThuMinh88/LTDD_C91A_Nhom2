@@ -9,6 +9,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.nhom2.qlappdoctruyen.model.TaiKhoan;
+import com.nhom2.qlappdoctruyen.model.Truyen;
 
 
 public class databasedoctruyen  extends SQLiteOpenHelper {
@@ -269,7 +271,7 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
         values.put(IMAGE, truyen.getAnh());
         values.put(ID_TAI_KHOAN, truyen.getID_TK());
 
-        db.insert(TABLE_TAIKHOAN, null,values);
+        db.insert(TABLE_TRUYEN, null,values);
         db.close();
     }
     //delete truyen
