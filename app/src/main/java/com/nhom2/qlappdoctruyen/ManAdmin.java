@@ -65,12 +65,14 @@ public class ManAdmin extends AppCompatActivity {
             }
         });
     }
+
+    //hiển thị cửa sổ xoá
     private void  DialogDelete(int position){
         Dialog dialog = new Dialog(this);
         //nạp layout
         dialog.setContentView(R.layout.dialogdelete);
         //chỉ no mới đc đóng
-        dialog.setCanceledOnTouchOutside(false);
+        //dialog.setCanceledOnTouchOutside(false);
 
         //ánh xạ
         Button btnYes = dialog.findViewById(R.id.buttonYes);
@@ -108,14 +110,14 @@ public class ManAdmin extends AppCompatActivity {
 
         databasedoctruyen = new databasedoctruyen(this);
 
-        Cursor cursor1 = databasedoctruyen.getData2();
+        Cursor cursorl = databasedoctruyen.getData2();
 
-        while (cursor1.moveToNext()){
-            int id = cursor1.getInt(0);
-            String tentruyen = cursor1.getString(1);
-            String noidung = cursor1.getString(2);
-            String anh = cursor1.getString(3);
-            int id_tk = cursor1.getInt(4);
+        while (cursorl.moveToNext()){
+            int id = cursorl.getInt(0);
+            String tentruyen = cursorl.getString(1);
+            String noidung = cursorl.getString(2);
+            String anh = cursorl.getString(3);
+            int id_tk = cursorl.getInt(4);
 
             TruyenArrayList.add(new Truyen(id, tentruyen,noidung,anh,id_tk));
 
@@ -123,7 +125,7 @@ public class ManAdmin extends AppCompatActivity {
 
             listView.setAdapter(adapterTruyen);
         }
-        cursor1.moveToFirst();
-        cursor1.close();
+        cursorl.moveToFirst();
+        cursorl.close();
     }
 }

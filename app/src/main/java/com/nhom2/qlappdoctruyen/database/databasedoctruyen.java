@@ -249,10 +249,10 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
         Log.e("ADD TK", "TC");
     }
 
-    //lấy 3 truyện mới nhất
+    //lấy  truyện mới nhất
     public Cursor getDatal(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN+" DESC LIMIT 3", null);
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN+" DESC LIMIT 10", null);
         return res;
     }
 
@@ -280,7 +280,7 @@ public class databasedoctruyen  extends SQLiteOpenHelper {
     public int Delete(int i) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        int res = db.delete(TABLE_TRUYEN, ID_TRUYEN+"=" +i, null);
+        int res = db.delete(TABLE_TRUYEN, ID_TRUYEN+" = "+i, null);
         return res;
     }
 }
