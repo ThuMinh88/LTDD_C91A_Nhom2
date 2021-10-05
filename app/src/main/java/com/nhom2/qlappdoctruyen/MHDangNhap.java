@@ -70,11 +70,6 @@ public class MHDangNhap extends AppCompatActivity {
 
                         startActivity(intent);
                     }
-                    else{
-                        Toast.makeText(MHDangNhap.this,"Mời bạn nhập lại thông tin!!",Toast.LENGTH_LONG).show();
-                        edtMatKhau.setText("");
-                        edtTaiKhoan.setText("");
-                    }
                 }
                 cursor.moveToFirst();
                 //đóng khi ko dùng

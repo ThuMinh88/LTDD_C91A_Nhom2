@@ -23,7 +23,7 @@ public class MainDangBai extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_man_dang_bai);
+        setContentView(R.layout.activity_main_dang_bai);
 
         edtAnh = findViewById(R.id.dbimg);
         edtTenTruyen = findViewById(R.id.dbTentruyen);
@@ -68,5 +68,6 @@ public class MainDangBai extends AppCompatActivity {
 
         Truyen truyen = new Truyen(id,tentruyen,noidung,img,id);
         return  truyen;
+
     }
 }

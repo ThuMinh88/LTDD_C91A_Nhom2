@@ -15,7 +15,6 @@
         <activity android:name=".MainThongTin" />
         <activity android:name=".ManTimKiem"/>
         <activity android:name=".ManAdmin"/>
-        <activity android:name=".ManDangBai"/>
         <activity android:name=".MHDangKy" />
         <activity android:name=".ManNoiDung"/>
         <activity android:name=".MainActivity" />

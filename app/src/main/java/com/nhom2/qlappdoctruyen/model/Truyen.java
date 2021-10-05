@@ -14,6 +14,14 @@ public class Truyen {
         Anh = anh;
         this.ID_TK = ID_TK;
     }
+  /*  public Truyen(String tenTruyen, String noiDung, String anh, int ID_TK) {
+        this.ID = this.ID;
+        this.tenTruyen = tenTruyen;
+        NoiDung = noiDung;
+        Anh = anh;
+        this.ID_TK = ID_TK;
+    }*/
+
 
     public int getID() {
         return ID;

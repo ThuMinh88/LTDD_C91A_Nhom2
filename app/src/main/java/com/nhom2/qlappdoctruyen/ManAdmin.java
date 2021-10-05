@@ -48,7 +48,7 @@ public class ManAdmin extends AppCompatActivity {
                 int id = intent1.getIntExtra("Id", 0);
 
                 //tiếp tục gửi id qua màn hình thêm truyện
-                Intent intent = new Intent(ManAdmin.this, ManDangBai.class);
+                Intent intent = new Intent(ManAdmin.this, MainDangBai.class);
                 intent.putExtra("Id", id);
                 startActivity(intent);
             }
