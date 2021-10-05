@@ -14,12 +14,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class adapterchuyenmuc extends BaseAdapter {
+public class adapterChuyenMuc extends BaseAdapter {
     private Context context;
     private int layout;
     private List<chuyenmuc> chuyenmucList;
 
-    public adapterchuyenmuc(Context context, int layout, List<chuyenmuc> chuyenmucList) {
+    public adapterChuyenMuc(Context context, int layout, List<chuyenmuc> chuyenmucList) {
         this.context = context;
         this.layout = layout;
         this.chuyenmucList = chuyenmucList;

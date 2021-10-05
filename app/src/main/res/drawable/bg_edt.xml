@@ -4,12 +4,8 @@
     <solid
         android:color="@color/design_default_color_secondary_variant">
     </solid>
-    <corners android:radius="100dp"/>
-    <stroke android:width="0dp" android:color="#FEFBF3"/>
-    <gradient
-        android:angle="0"
-        android:endColor="#ffd1ff"
-        android:startColor="#fad0c4"
-        android:type="linear" />
+    <corners android:radius="18dp" android:topLeftRadius="0dp" android:topRightRadius="0dp"/>
+    <stroke android:width="3dp" android:color="#FEFBF3"/>
+    <solid android:color="#FDD2BF"/>
     <padding android:left="0dp" android:top="0dp"/>
 </shape>

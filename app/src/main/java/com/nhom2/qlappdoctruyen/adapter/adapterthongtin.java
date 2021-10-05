@@ -14,14 +14,14 @@ import com.nhom2.qlappdoctruyen.model.TaiKhoan;
 
 import java.util.List;
 
-public class adapterthongtin extends BaseAdapter {
+public class adapterThongTin extends BaseAdapter {
 
     private Context context;
     private int layout;
 
     private List<TaiKhoan> taiKhoanList;
 
-    public adapterthongtin(Context context, int layout, List<TaiKhoan> taiKhoanList) {
+    public adapterThongTin(Context context, int layout, List<TaiKhoan> taiKhoanList) {
         this.context = context;
         this.layout = layout;
         this.taiKhoanList = taiKhoanList;

@@ -1,6 +1,7 @@
-          package com.nhom2.qlappdoctruyen;
+package com.nhom2.qlappdoctruyen;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -8,19 +9,24 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
-import com.nhom2.qlappdoctruyen.adapter.adapterchuyenmuc;
-import com.nhom2.qlappdoctruyen.adapter.adapterthongtin;
+import com.nhom2.qlappdoctruyen.adapter.adapterChuyenMuc;
+import com.nhom2.qlappdoctruyen.adapter.adapterThongTin;
 import com.nhom2.qlappdoctruyen.adapter.adapterTruyen;
 import com.nhom2.qlappdoctruyen.database.databasedoctruyen;
 import com.nhom2.qlappdoctruyen.model.TaiKhoan;
@@ -47,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     databasedoctruyen databaseDocTruyen;
 
-    adapterchuyenmuc adapterChuyenMuc;
-    adapterthongtin apdapterThongTin;
+    adapterChuyenMuc adapterChuyenMuc;
+    adapterThongTin apdapterThongTin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, ManNoiDung.class);
 
-                String tenT = TruyenArrayList.get(position).getTenTruyen();
+                String tent = TruyenArrayList.get(position).getTenTruyen();
                 String noidungt = TruyenArrayList.get(position).getNoiDung();
-                intent.putExtra("tentruyen", tenT);
+                intent.putExtra("tenTruyen", tent);
                 intent.putExtra("noidung", noidungt);
                 startActivity(intent);
             }
@@ -88,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
                     if ((i == 2)) {
                         Intent intent = new Intent(MainActivity.this, MainDangBai.class);
+                        //gửi id tài khoản qua màn admin
+                        intent.putExtra("Id",idd);
                         startActivity(intent);
                     }
                     else {
@@ -140,12 +148,12 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursorl = databaseDocTruyen.getDatal();
         while (cursorl.moveToNext()){
             int id = cursorl.getInt(0);
-            String tenTruyen = cursorl.getString(1);
-            String noiDung = cursorl.getString(2);
+            String tentruyen = cursorl.getString(1);
+            String noidung = cursorl.getString(2);
             String anh = cursorl.getString(3);
             int id_tk = cursorl.getInt(4);
 
-            TruyenArrayList.add(new Truyen(id,tenTruyen,noiDung,anh,id_tk));
+            TruyenArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
             adapterTruyen = new adapterTruyen(getApplicationContext(),TruyenArrayList);
             listViewNew.setAdapter(adapterTruyen);
         }
@@ -157,16 +165,16 @@ public class MainActivity extends AppCompatActivity {
         taiKhoanArrayList = new ArrayList<>();
         taiKhoanArrayList.add(new TaiKhoan(tenTaiKhoan,email));
 
-        apdapterThongTin = new adapterthongtin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
+        apdapterThongTin = new adapterThongTin(this,R.layout.navigation_thongtin,taiKhoanArrayList);
         listviewThongTin.setAdapter(apdapterThongTin);
 
         //chuyenmuc
         chuyenmucArrayList = new ArrayList<>();
-        chuyenmucArrayList.add(new chuyenmuc("Đăng bài",R.mipmap.post));
-        chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.mipmap.aboutus));
+        chuyenmucArrayList.add(new chuyenmuc("Đăng bài",R.drawable.ic_baseline_post_add_24));
+        chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.drawable.ic_baseline_face_24));
         chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.ic_baseline_login_24));
 
-        adapterChuyenMuc = new adapterchuyenmuc(this,R.layout.chuyenmuc, chuyenmucArrayList);
+        adapterChuyenMuc = new adapterChuyenMuc(this,R.layout.chuyenmuc, chuyenmucArrayList);
         listviewMain.setAdapter(adapterChuyenMuc);
     }
     // Nap mot menu tim kiem

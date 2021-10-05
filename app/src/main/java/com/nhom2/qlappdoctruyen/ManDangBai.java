@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainDangBai extends AppCompatActivity {
+public class ManDangBai extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
